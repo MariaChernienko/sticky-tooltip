@@ -1,72 +1,29 @@
 * {
-  outline: none;
   margin: 0;
-  padding: 0;
-  font-family: "Calibri";
-  font-size: 14px;
-  text-decoration: none;
-  list-style: none;
-  color: #333;
-  font-weight: normal;
-  vertical-align: middle; }
+  padding: 0; }
 
-html,
-body {
-  background: #eee; }
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1100px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto; }
 
-.form-title {
-  text-align: center;
-  font-size: 23px;
+.tooltip {
+  position: absolute;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 30px;
+  font-size: 24px;
   font-weight: bold;
-  text-transform: uppercase; }
-
-.form-container {
-  padding: 15px 20px;
-  background: #fff;
-  max-width: 400px;
-  margin: 20px auto;
-  position: relative;
-  box-shadow: 0px 21px 46px -8px rgba(0, 0, 0, 0.1); }
-  .form-container .input-group {
-    margin-bottom: 20px; }
-    .form-container .input-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #555; }
-    .form-container .input-group input,
-    .form-container .input-group select,
-    .form-container .input-group textarea {
-      display: block;
-      padding: 8px 10px;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      box-sizing: border-box;
-      width: 100%;
-      font-size: 14px;
-      transition: border 0.1s linear; }
-    .form-container .input-group #gender {
-      display: inline-block;
-      width: auto; }
-    .form-container .input-group span {
-      margin-left: 7px;
-      margin-right: 30px; }
-    .form-container .input-group .empty {
-      border: 1px solid red; }
-  .form-container footer {
-    padding: 15px 20px; }
-  .form-container .btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background: #3498db;
-    padding: 10px 20px;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.1s linear; }
-    .form-container .btn:focus {
-      background: #3498db; }
-    .form-container .btn button[type="submit"]:hover {
-      background: #43a2e0; }
+  color: white; }
+  .tooltip:after {
+    content: "";
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.7); }
