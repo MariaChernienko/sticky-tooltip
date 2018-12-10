@@ -1,20 +1,22 @@
 (function anon() {
-  const space = document.querySelector(".container");
+  const space = document.querySelector('.container');
+  const tooltip = document.querySelector('.tooltip');
 
-  const createTooltip = function(x, y) {
-    const newEl = document.createElement("div");
-    newEl.classList.add("tooltip");
-    newEl.textContent = "x:" + x + ", " + "y:" + y;
-    space.appendChild(newEl);
-    newEl.style.left = x - 90 + "px";
-    newEl.style.top = y - 60 + "px";
+  const addCoordinates = (x, y) => {
+    tooltip.textContent = `x:${x}, ` + `y:${y}`;
+    tooltip.style.left = `${x - 90}px`;
+    tooltip.style.top = `${y - 80 }px`;
   };
 
-  space.addEventListener("mousemove", event => {
-    document.querySelector(".tooltip").remove();
+  window.addEventListener('mousemove', (event) => {
     event = event || window.event;
-    let x = event.pageX;
-    let y = event.pageY;
-    createTooltip(x, y);
+    if (event.target.parentNode === space) {
+      event = event || window.event;
+      const x = event.pageX;
+      const y = event.pageY;
+      addCoordinates(x, y);
+    } else {
+      addCoordinates(-100, -100);
+    }
   });
-})();
+}());
